@@ -1,0 +1,63 @@
+{
+    "results" : [
+  
+    ],
+    "soldOutList" : [
+      {
+        "hotelName" : "淺草法華俱樂部酒店",
+        "imgUrl" : "",
+        "star" : 3,
+        "zoneName" : "",
+        "reviewDesc" : "暫無評分",
+        "roomID" : 0,
+        "hotelID" : 1697115,
+        "roomDesc" : "",
+        "canBookNum" : 0,
+        "hotelEnName" : "Hotel Hokke Club Asakusa"
+      }
+    ],
+    "nextPage" : false,
+    "childSwitch" : false,
+    "discount" : {
+      "title" : "機加酒超值折扣碼",
+      "content" : "最高折$300元\/最高享9.5折"
+    },
+    "ecommerce" : {
+      "checkout" : "2025-03-23",
+      "url" : "https:\/\/packages-test.eztravel.com.tw\/roundtrip-TPE-TYO?enddt=20250323&cityid=228&fromdt=20250315&direct=false&roomqty=1&passenger=200&checkin=20250315&checkout=20250323",
+      "appLink" : "ezitapp:\/\/packages\/roundtrip-TPE-TYO?enddt=20250323&cityid=228&fromdt=20250315&direct=false&roomqty=1&passenger=200&checkin=20250315&checkout=20250323",
+      "city" : "東京",
+      "defaultOpt" : {
+        "prodHotelNo" : "1418",
+        "price" : 24496,
+        "prodName" : "2631東京阿佐谷路線客棧酒店（原亞米斯塔阿佐谷酒店）"
+      },
+      "checkin" : "2025-03-15"
+    },
+    "conditionAnswers" : {
+      "ouid" : "",
+      "country" : "JP",
+      "fare" : "TF_277,TF_277",
+      "arrLine" : "201",
+      "airline" : "MM",
+      "aid" : "",
+      "returndate" : "20250323",
+      "productType" : "FWH",
+      "night" : "8",
+      "sid" : "",
+      "airlineFlight" : "true",
+      "depCity" : "TPE",
+      "line" : "201",
+      "depCountry" : "TW",
+      "occupancy" : "2",
+      "cityid" : "228",
+      "depdate" : "20250315",
+      "provinceid" : "11079",
+      "roomCount" : "1",
+      "arrCountry" : "JP",
+      "domestic" : "false",
+      "arrCity" : "TYO",
+      "adult" : "2",
+      "depLine" : "100"
+    }
+  }

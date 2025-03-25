@@ -1,0 +1,613 @@
+{
+    "prodNo": "GRP0000007748",
+    "prodNoVirt": "GRP0000007748",
+    "tripType": "GRP",
+    "depDate": "20250302",
+    "retDate": "20250303",
+    "prodName": "【高鐵+環島之星】阿里山林鐵小火車(全線通車)．特富野古道森呼吸2天(複製正式台GRP7761)",
+    "htlInfo": [
+        "因地區、飯店之體系屬性不同，如有特殊需求(如一大床/兩小床；嬰兒床等)，請於訂單成立時提出，我們將為您向飯店提出需求，唯是否取得，需視入住飯店之住房狀況，不便之處，敬請見諒。",
+        "孩童定義依飯店而有不同，需現場加價則依飯店規定而定。",
+        "小孩不佔床：即小孩不佔床位。若決定讓2個小孩擠一個床位，則請選擇1孩童+1小孩不佔床；",
+        "小孩不佔床最多2人，不佔床之孩童，不含飯店餐食、設施使用及備品"
+    ],
+    "conditionAnswers": {
+        "deptDt": "20250302",
+        "prodType": "GRP",
+        "productType": "GRP",
+        "prodSubtype": "GRP",
+        "line": "104",
+        "travelType1": "B04",
+        "travelType2": "B02",
+        "travelType3": "B06"
+    },
+    "needs": {
+        "trafModel": "STANDARD"
+    },
+    "traffics": [
+        {
+            "options": [
+                {
+                    "content": [
+                        {
+                            "day": 1,
+                            "daySeq": "010",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000194",
+                            "cond1Type": "805N",
+                            "name": "台灣高鐵-標準車廂",
+                            "trainNo": "805N",
+                            "depTime": "07:11",
+                            "arrTime": "08:55",
+                            "duration": "1h44m",
+                            "placeFrom": "105",
+                            "placeTo": "130",
+                            "fromTitle": "台北",
+                            "toTitle": "嘉義",
+                            "classCode": "YF",
+                            "price": 0,
+                            "childPrice": 0
+                        }
+                    ],
+                    "qty": 97
+                },
+                {
+                    "content": [
+                        {
+                            "day": 1,
+                            "daySeq": "010",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000194",
+                            "cond1Type": "805N",
+                            "name": "台灣高鐵-標準車廂",
+                            "trainNo": "805N",
+                            "depTime": "07:19",
+                            "arrTime": "08:55",
+                            "duration": "1h36m",
+                            "placeFrom": "110",
+                            "placeTo": "130",
+                            "fromTitle": "板橋",
+                            "toTitle": "嘉義",
+                            "classCode": "YF",
+                            "price": -20,
+                            "childPrice": -10
+                        }
+                    ],
+                    "qty": 97
+                },
+                {
+                    "content": [
+                        {
+                            "day": 1,
+                            "daySeq": "010",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000194",
+                            "cond1Type": "805N",
+                            "name": "台灣高鐵-標準車廂",
+                            "trainNo": "805N",
+                            "depTime": "07:34",
+                            "arrTime": "08:55",
+                            "duration": "1h21m",
+                            "placeFrom": "115",
+                            "placeTo": "130",
+                            "fromTitle": "桃園",
+                            "toTitle": "嘉義",
+                            "classCode": "YF",
+                            "price": -100,
+                            "childPrice": -50
+                        }
+                    ],
+                    "qty": 97
+                },
+                {
+                    "content": [
+                        {
+                            "day": 1,
+                            "daySeq": "010",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000194",
+                            "cond1Type": "805N",
+                            "name": "台灣高鐵-標準車廂",
+                            "trainNo": "805N",
+                            "depTime": "07:47",
+                            "arrTime": "08:55",
+                            "duration": "1h08m",
+                            "placeFrom": "120",
+                            "placeTo": "130",
+                            "fromTitle": "新竹",
+                            "toTitle": "嘉義",
+                            "classCode": "YF",
+                            "price": -170,
+                            "childPrice": -85
+                        }
+                    ],
+                    "qty": 97
+                }
+            ],
+            "defaultIndex": 0
+        },
+        {
+            "options": [
+                {
+                    "content": [
+                        {
+                            "day": 1,
+                            "daySeq": "010",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000043",
+                            "cond1Type": "0005",
+                            "name": "阿里山森林小火車",
+                            "trainNo": "0005",
+                            "depTime": "10:00",
+                            "arrTime": "14:56",
+                            "duration": "4h56m",
+                            "placeFrom": "01",
+                            "placeTo": "02",
+                            "fromTitle": "嘉義火車站",
+                            "toTitle": "阿里山車站",
+                            "classCode": "YF",
+                            "price": 0,
+                            "childPrice": 0
+                        }
+                    ],
+                    "qty": 6
+                }
+            ],
+            "defaultIndex": 0
+        },
+        {
+            "options": [
+                {
+                    "content": [
+                        {
+                            "day": 2,
+                            "daySeq": "020",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000250",
+                            "cond1Type": "2",
+                            "name": "環島之星",
+                            "trainNo": "2",
+                            "depTime": "17:55",
+                            "arrTime": "20:28",
+                            "duration": "2h33m",
+                            "placeFrom": "090",
+                            "placeTo": "105",
+                            "fromTitle": "嘉義",
+                            "toTitle": "新竹 ",
+                            "classCode": "YF",
+                            "price": 0,
+                            "childPrice": 0
+                        }
+                    ],
+                    "qty": 273
+                },
+                {
+                    "content": [
+                        {
+                            "day": 2,
+                            "daySeq": "020",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000250",
+                            "cond1Type": "2",
+                            "name": "環島之星",
+                            "trainNo": "2",
+                            "depTime": "17:55",
+                            "arrTime": "21:07",
+                            "duration": "3h12m",
+                            "placeFrom": "090",
+                            "placeTo": "110",
+                            "fromTitle": "嘉義",
+                            "toTitle": "桃園 ",
+                            "classCode": "YF",
+                            "price": 0,
+                            "childPrice": 0
+                        }
+                    ],
+                    "qty": 273
+                },
+                {
+                    "content": [
+                        {
+                            "day": 2,
+                            "daySeq": "020",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000250",
+                            "cond1Type": "2",
+                            "name": "環島之星",
+                            "trainNo": "2",
+                            "depTime": "17:55",
+                            "arrTime": "21:29",
+                            "duration": "3h34m",
+                            "placeFrom": "090",
+                            "placeTo": "115",
+                            "fromTitle": "嘉義",
+                            "toTitle": "板橋",
+                            "classCode": "YF",
+                            "price": 0,
+                            "childPrice": 0
+                        }
+                    ],
+                    "qty": 273
+                },
+                {
+                    "content": [
+                        {
+                            "day": 2,
+                            "daySeq": "020",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000250",
+                            "cond1Type": "2",
+                            "name": "環島之星",
+                            "trainNo": "2",
+                            "depTime": "17:55",
+                            "arrTime": "21:40",
+                            "duration": "3h45m",
+                            "placeFrom": "090",
+                            "placeTo": "120",
+                            "fromTitle": "嘉義",
+                            "toTitle": "台北(迄)",
+                            "classCode": "YF",
+                            "price": 0,
+                            "childPrice": 0
+                        }
+                    ],
+                    "qty": 273
+                },
+                {
+                    "content": [
+                        {
+                            "day": 2,
+                            "daySeq": "020",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000194",
+                            "cond1Type": "672N",
+                            "name": "台灣高鐵-標準車廂",
+                            "trainNo": "672N",
+                            "depTime": "18:32",
+                            "arrTime": "20:02",
+                            "duration": "1h30m",
+                            "placeFrom": "130",
+                            "placeTo": "105",
+                            "fromTitle": "嘉義",
+                            "toTitle": "台北",
+                            "classCode": "YF",
+                            "price": 0,
+                            "childPrice": 0
+                        }
+                    ],
+                    "qty": 96
+                },
+                {
+                    "content": [
+                        {
+                            "day": 2,
+                            "daySeq": "020",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000194",
+                            "cond1Type": "672N",
+                            "name": "台灣高鐵-標準車廂",
+                            "trainNo": "672N",
+                            "depTime": "18:32",
+                            "arrTime": "19:51",
+                            "duration": "1h19m",
+                            "placeFrom": "130",
+                            "placeTo": "110",
+                            "fromTitle": "嘉義",
+                            "toTitle": "板橋",
+                            "classCode": "YF",
+                            "price": -20,
+                            "childPrice": -10
+                        }
+                    ],
+                    "qty": 96
+                },
+                {
+                    "content": [
+                        {
+                            "day": 2,
+                            "daySeq": "020",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000194",
+                            "cond1Type": "672N",
+                            "name": "台灣高鐵-標準車廂",
+                            "trainNo": "672N",
+                            "depTime": "18:32",
+                            "arrTime": "19:38",
+                            "duration": "1h06m",
+                            "placeFrom": "130",
+                            "placeTo": "115",
+                            "fromTitle": "嘉義",
+                            "toTitle": "桃園",
+                            "classCode": "YF",
+                            "price": -100,
+                            "childPrice": -50
+                        }
+                    ],
+                    "qty": 96
+                },
+                {
+                    "content": [
+                        {
+                            "day": 2,
+                            "daySeq": "020",
+                            "crowdNo": "A",
+                            "partNo": "TRN0000000194",
+                            "cond1Type": "672N",
+                            "name": "台灣高鐵-標準車廂",
+                            "trainNo": "672N",
+                            "depTime": "18:32",
+                            "arrTime": "19:25",
+                            "duration": "0h53m",
+                            "placeFrom": "130",
+                            "placeTo": "120",
+                            "fromTitle": "嘉義",
+                            "toTitle": "新竹",
+                            "classCode": "YF",
+                            "price": -170,
+                            "childPrice": -85
+                        }
+                    ],
+                    "qty": 96
+                }
+            ],
+            "defaultIndex": 3
+        }
+    ],
+    "trafficShow": true,
+    "crowds": [
+        {
+            "crowdNo": "1",
+            "seq": "1",
+            "crowdName": [
+                "阿里山賓館"
+            ],
+            "crowdPrice": 9750,
+            "options": [
+                {
+                    "optId": "4",
+                    "optName": "四人房",
+                    "optPrice": 9750,
+                    "optQty": 10,
+                    "optAVLQty": 1,
+                    "psgLimit": {
+                        "max": 4,
+                        "min": 4,
+                        "std": 4
+                    },
+                    "psgList": [
+                        {
+                            "name": "成人佔床",
+                            "type": "adult",
+                            "price": 9750
+                        },
+                        {
+                            "name": "資深公民佔床",
+                            "type": "senior",
+                            "price": 9250
+                        },
+                        {
+                            "name": "孩童佔床",
+                            "type": "kid",
+                            "price": 9250
+                        },
+                        {
+                            "name": "孩童不佔床",
+                            "type": "kidXAccForBed",
+                            "price": 4500
+                        },
+                        {
+                            "name": "嬰兒不佔床",
+                            "type": "baby",
+                            "price": 500
+                        }
+                    ]
+                },
+                {
+                    "optId": "3",
+                    "optName": "三人房",
+                    "optPrice": 10900,
+                    "optQty": 10,
+                    "optAVLQty": 2,
+                    "psgLimit": {
+                        "max": 3,
+                        "min": 3,
+                        "std": 3
+                    },
+                    "psgList": [
+                        {
+                            "name": "成人佔床",
+                            "type": "adult",
+                            "price": 10900
+                        },
+                        {
+                            "name": "資深公民佔床",
+                            "type": "senior",
+                            "price": 10400
+                        },
+                        {
+                            "name": "孩童佔床",
+                            "type": "kid",
+                            "price": 10400
+                        },
+                        {
+                            "name": "孩童不佔床",
+                            "type": "kidXAccForBed",
+                            "price": 4500
+                        },
+                        {
+                            "name": "嬰兒不佔床",
+                            "type": "baby",
+                            "price": 500
+                        }
+                    ]
+                },
+                {
+                    "optId": "2",
+                    "optName": "雙人房",
+                    "optPrice": 12250,
+                    "optQty": 10,
+                    "optAVLQty": 3,
+                    "psgLimit": {
+                        "max": 2,
+                        "min": 2,
+                        "std": 2
+                    },
+                    "psgList": [
+                        {
+                            "name": "成人佔床",
+                            "type": "adult",
+                            "price": 12250
+                        },
+                        {
+                            "name": "資深公民佔床",
+                            "type": "senior",
+                            "price": 11750
+                        },
+                        {
+                            "name": "孩童佔床",
+                            "type": "kid",
+                            "price": 11750
+                        },
+                        {
+                            "name": "孩童不佔床",
+                            "type": "kidXAccForBed",
+                            "price": 4500
+                        },
+                        {
+                            "name": "嬰兒不佔床",
+                            "type": "baby",
+                            "price": 500
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "crowdNo": "2",
+            "seq": "2",
+            "crowdName": [
+                "阿里山神木賓館"
+            ],
+            "crowdPrice": 7250,
+            "options": [
+                {
+                    "optId": "4",
+                    "optName": "四人房",
+                    "optPrice": 7250,
+                    "optQty": 10,
+                    "optAVLQty": 1,
+                    "psgLimit": {
+                        "max": 4,
+                        "min": 4,
+                        "std": 4
+                    },
+                    "psgList": [
+                        {
+                            "name": "成人佔床",
+                            "type": "adult",
+                            "price": 7250
+                        },
+                        {
+                            "name": "資深公民佔床",
+                            "type": "senior",
+                            "price": 6750
+                        },
+                        {
+                            "name": "孩童佔床",
+                            "type": "kid",
+                            "price": 6750
+                        },
+                        {
+                            "name": "孩童不佔床",
+                            "type": "kidXAccForBed",
+                            "price": 4500
+                        },
+                        {
+                            "name": "嬰兒不佔床",
+                            "type": "baby",
+                            "price": 500
+                        }
+                    ]
+                },
+                {
+                    "optId": "3",
+                    "optName": "三人房",
+                    "optPrice": 7990,
+                    "optQty": 10,
+                    "optAVLQty": 1,
+                    "psgLimit": {
+                        "max": 3,
+                        "min": 3,
+                        "std": 3
+                    },
+                    "psgList": [
+                        {
+                            "name": "成人佔床",
+                            "type": "adult",
+                            "price": 7990
+                        },
+                        {
+                            "name": "資深公民佔床",
+                            "type": "senior",
+                            "price": 7490
+                        },
+                        {
+                            "name": "孩童佔床",
+                            "type": "kid",
+                            "price": 7490
+                        },
+                        {
+                            "name": "孩童不佔床",
+                            "type": "kidXAccForBed",
+                            "price": 4500
+                        },
+                        {
+                            "name": "嬰兒不佔床",
+                            "type": "baby",
+                            "price": 500
+                        }
+                    ]
+                },
+                {
+                    "optId": "2",
+                    "optName": "雙人房",
+                    "optPrice": 8990,
+                    "optQty": 10,
+                    "optAVLQty": 2,
+                    "psgLimit": {
+                        "max": 2,
+                        "min": 2,
+                        "std": 2
+                    },
+                    "psgList": [
+                        {
+                            "name": "成人佔床",
+                            "type": "adult",
+                            "price": 8990
+                        },
+                        {
+                            "name": "資深公民佔床",
+                            "type": "senior",
+                            "price": 8490
+                        },
+                        {
+                            "name": "孩童佔床",
+                            "type": "kid",
+                            "price": 8490
+                        },
+                        {
+                            "name": "孩童不佔床",
+                            "type": "kidXAccForBed",
+                            "price": 4500
+                        },
+                        {
+                            "name": "嬰兒不佔床",
+                            "type": "baby",
+                            "price": 500
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
