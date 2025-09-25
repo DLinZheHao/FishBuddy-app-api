@@ -1,11 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 class LocationService {
     constructor(filePath) {
         this.filePath = filePath;
     }
 
+
+    /// 讀取 json 檔案中的所有地點，找到對應的地點名稱
     findLocationsByName(query) {
         return new Promise((resolve, reject) => {
             fs.readFile(this.filePath, 'utf8', (err, data) => {
@@ -30,4 +32,4 @@ class LocationService {
 }
 
 // 匯出 LocationService 類別
-module.exports = LocationService;
+export default LocationService;

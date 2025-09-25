@@ -1,14 +1,15 @@
 // Include express from node_modules and define server related variables
-const express = require('express')
-const app = express()
-const port = 3000
+import express from 'express';
+import taskRouter from './routes/tasksRoutes.js';
+import pkgRouter from './routes/pkgListRoutes.js';
+import tripRouter from './routes/tripRoutes.js';
+import memberRouter from './routes/memberRoutes.js';
+import weatherRouter from './routes/weatherRoutes.js';
+import lobbyRouter from './routes/lobbyRoutes.js';
+import vacationRouter from './routes/vacationRoutes.js';
 
-const taskRouter = require('./routes/tasksRoutes');
-const pkgRouter = require('./routes/pkgListRoutes')
-const tripRouter = require('./routes/tripRoutes')
-const memberRouter = require('./routes/memberRoutes')
-const weatherRouter = require('./routes/weatherRoutes')
-const lobbyRouter = require('./routes/lobbyRoutes')
+const app = express();
+const port = 3000;
 
 app.use(express.json())
 app.use('/', taskRouter);
@@ -17,6 +18,7 @@ app.use('/', tripRouter)
 app.use('/', memberRouter)
 app.use('/', weatherRouter)
 app.use('/', lobbyRouter)
+app.use('/', vacationRouter)
 
 // 輸出 app 給 server 使用
-module.exports = app
+export default app;

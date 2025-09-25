@@ -1,10 +1,10 @@
-const express = require('express');
-const router = express.Router();
+import express from 'express';
+import TripController from '../controllers/testController/TripController.js';
 
-const TripController = require('../controllers/TripController');
+const router = express.Router();
 
 router
   .route('/api/1/trip/plan/:prodNo/:depart')
   .get(TripController.get_plan)
 
-module.exports = router
+export default router;

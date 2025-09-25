@@ -1,4 +1,6 @@
-const sqlite3 = require('sqlite3').verbose();
+import sqlite3 from 'sqlite3';
+const _sqlite3 = sqlite3.verbose();
+const { Database } = _sqlite3;
 
 class CustomError extends Error {
     constructor(message, type) {
@@ -9,7 +11,7 @@ class CustomError extends Error {
   }
 
 // 開啟或創建 SQLite 資料庫
-const db = new sqlite3.Database('./taskDB.sqlite', (err) => {
+const db = new Database('./taskDB.sqlite', (err) => {
   if (err) {
     console.error('Error opening database:', err.message);
   } else {
@@ -100,10 +102,5 @@ const closeDatabase = () => {
 };
 
 // **導出模組**
-module.exports = {
-  createTable,
-  insertTask,
-  getAllTasks,
-  closeDatabase,
-  getTask
-};
+export { createTable, insertTask, getAllTasks, closeDatabase, getTask };
+export default { createTable, insertTask, getAllTasks, closeDatabase, getTask };

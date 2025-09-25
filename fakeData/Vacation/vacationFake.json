@@ -1,0 +1,144 @@
+{
+    "prodNm" : "易遊嚴選~星宇漫遊北海道．積丹藍海景．採果樂．浪漫小樽運河．北海道神宮．洞爺湖花火．一日自由行5天",
+    "hotelRules" : [
+      "團體住宿飯店，皆以(兩人一室)為主，恕無法指定一大床或兩小床。",
+      "單人報名旅客，將依性別配房，如遇無法配房需補單人房差，客服人員將提供報價。",
+      "總人數為單數之報名旅客，可先需求安排加床，如屆時因市區飯店太小無法加床需補單人房差，客服人員將提供報價。",
+      "日本飯店規定6歲以上之孩童皆需佔床、歐洲地區2歲以上之孩童一律須佔床，請留意您的訂購，如您選擇孩童不佔床，但依飯店規定必須佔床時，易遊網會自行依相關規定調整並同步通知您。",
+      "嬰兒\/孩童之年紀核算，需以最後回程日計算。",
+      "如為1大人帶1孩童參團，孩童則需佔床。",
+      "如為1大人帶2孩童參團，若決定讓2個孩童擠一個床位，則請選擇1孩童佔床+1孩童不佔床 (但需符合不佔床規則)。",
+      "同房加床：因地區、飯店之體系屬性不同，不一定可提供加床，如有加床飯店多以雙人房加行軍床或沙發床等方式提供3名佔床者同住一房。",
+      "如有特殊需求，可於訂單成立時提出，但僅能協助安排，恕無法保證。"
+    ],
+    "airInfoHint" : "本商品所搭乘之航班，以行程確認單為準",
+    "depDate" : "20250609",
+    "backDate" : "20250613",
+    "countryCd" : "JP",
+    "hotelGroups" : [
+      {
+        "roomTags" : [
+          "標準單人房",
+          "標準雙人房"
+        ],
+        "ezPrice" : 33900,
+        "htlCrowdNo" : "1",
+        "totalRoomsQty" : 20,
+        "rooms" : [
+          {
+            "htlNum" : "1",
+            "items" : [
+              {
+                "webEzPrice" : 43900,
+                "ezPrice" : 43900,
+                "cond1Type" : "001",
+                "name" : "成人佔床",
+                "type" : "adult",
+                "ageText" : "滿12歲以上"
+              }
+            ],
+            "qty" : 10,
+            "cond1Type" : "001",
+            "htlNumName" : "標準單人房"
+          },
+          {
+            "htlNum" : "2",
+            "items" : [
+              {
+                "webEzPrice" : 33900,
+                "ezPrice" : 33900,
+                "cond1Type" : "002",
+                "name" : "成人佔床",
+                "type" : "adult",
+                "ageText" : "滿12歲以上"
+              },
+              {
+                "webEzPrice" : 33900,
+                "ezPrice" : 33900,
+                "cond1Type" : "002",
+                "name" : "孩童佔床",
+                "type" : "kid",
+                "ageText" : "6~11歲(未滿12歲)"
+              },
+              {
+                "webEzPrice" : 30900,
+                "ezPrice" : 30900,
+                "cond1Type" : "002",
+                "name" : "孩童不佔床",
+                "type" : "kidXAccForBed",
+                "ageText" : "2~5歲(未滿6歲)"
+              },
+              {
+                "webEzPrice" : 5000,
+                "ezPrice" : 5000,
+                "cond1Type" : "002",
+                "name" : "嬰兒不佔床",
+                "type" : "infantXAccForBed",
+                "ageText" : "未滿2歲"
+              }
+            ],
+            "qty" : 10,
+            "cond1Type" : "002",
+            "htlNumName" : "標準雙人房"
+          }
+        ],
+        "name" : "團體飯店 4晚",
+        "webEzPrice" : 33900
+      }
+    ],
+    "traffics" : [
+      {
+        "returnSegments" : [
+          {
+            "airline" : "星宇航空 JX851",
+            "departAirport" : "新千歲機場",
+            "arriveAirport" : "桃園國際機場",
+            "arriveTime" : "19:30",
+            "departTime" : "16:15",
+            "departDate" : "20250613"
+          }
+        ],
+        "ptkGroupNo" : "A",
+        "arriveDate" : "20250613",
+        "goSegments" : [
+          {
+            "airline" : "星宇航空 JX850",
+            "departAirport" : "桃園國際機場",
+            "arriveAirport" : "新千歲機場",
+            "arriveTime" : "15:00",
+            "departTime" : "10:05",
+            "departDate" : "20250609"
+          }
+        ],
+        "qty" : 8,
+        "price" : 1000
+      },
+      {
+        "returnSegments" : [
+          {
+            "airline" : "星宇航空 JX851",
+            "departAirport" : "新千歲機場",
+            "arriveAirport" : "桃園國際機場",
+            "arriveTime" : "19:00",
+            "departTime" : "15:15",
+            "departDate" : "20250613"
+          }
+        ],
+        "ptkGroupNo" : "B",
+        "arriveDate" : "20250613",
+        "goSegments" : [
+          {
+            "airline" : "星宇航空 JX850",
+            "departAirport" : "桃園國際機場",
+            "arriveAirport" : "新千歲機場",
+            "arriveTime" : "14:00",
+            "departTime" : "09:20",
+            "departDate" : "20250609"
+          }
+        ],
+        "qty" : 0,
+        "price" : 1000
+      }
+    ],
+    "pfProdNo" : "FRN0000019721"
+  }

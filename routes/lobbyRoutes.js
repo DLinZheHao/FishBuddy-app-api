@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
+import express from 'express';
+import LobbyController from '../controllers/testController/LobbyController.js';
 
-const LobbyController = require('../controllers/LobbyController');
+const router = express.Router();
 
 router
   .route('/api/4/sendGet')
   .get(LobbyController.index_home)
 
-module.exports = router
+export default router;
 
 // "http://192.168.0.224:3000" + "/api/4" /index

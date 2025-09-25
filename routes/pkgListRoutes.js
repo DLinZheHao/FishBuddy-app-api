@@ -1,10 +1,10 @@
-const express = require('express');
-const router = express.Router();
+import express from 'express';
+import pkgController from '../controllers/testController/PkgController.js';
 
-const pkgController = require('../controllers/PkgController');
+const router = express.Router();
 
 router
   .route('/api/2/packages/hotel/list')
   .post(pkgController.get_hotel_list)
 
-module.exports = router
+export default router;

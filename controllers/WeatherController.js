@@ -1,11 +1,11 @@
-const { parse } = require("dotenv")
-const fs = require("fs");
-const axios = require("axios");
-const LocationService = require('./../utils/LocationService');
+import 'dotenv/config';
+import axios from 'axios';
+import LocationService from '../utils/LocationService.js';
+
 const locationService = new LocationService('Data/location.json');  // 傳入檔案路徑
 
 // 獲取未來 36 小時的全台天氣狀況
-exports.get_36_hour_weather = async (req, res) => {
+async function get_36_hour_weather(req, res) {
     try {
         const API_URL = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${process.env.WeatherKEY}`;
 
@@ -25,16 +25,16 @@ exports.get_36_hour_weather = async (req, res) => {
             }))
         }));
 
-        res.json({ success: true, data: formattedData });
+        res.json({ data: formattedData });
 
     } catch (err) {
         console.error("Error:", err);
         res.status(500).json({ error: "伺服器發生問題" });
     }
-};
+}
 
 // 台灣未來一個月潮汐狀況
-exports.get_tide_info = async (req, res) => {
+async function get_tide_info(req, res) {
     try {
         const API_URL = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-A0021-001";
         const apiKey = process.env.WeatherKEY; // 你的 API 金鑰
@@ -90,31 +90,7 @@ exports.get_tide_info = async (req, res) => {
         console.error("Error:", err);
         res.status(500).json({ error: "伺服器發生問題" });
     }
-};
+}
 
 
-// const params = {
-//     Authorization: process.env.WeatherKEY,
-//     location: 'Taipei',
-//     date: '2025-03-07',
-//   };
-  
-//   fetch('https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-A0021-001', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(params),
-//   })
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-//   .catch(error => console.error('Error:', error));
-
-//   const params = new URLSearchParams({
-//     Authorization: process.env.WeatherKEY,
-//     location: 'Taipei',
-//     // 加入其他參數，例如日期等
-//     date: '2025-03-07',
-//   });
-  
-//   const API_URL = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-A0021-001?${params.toString()}`;
+export default { get_36_hour_weather, get_tide_info };

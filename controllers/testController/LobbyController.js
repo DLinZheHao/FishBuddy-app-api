@@ -1,0 +1,16 @@
+import 'dotenv/config';
+import fs from 'fs';
+
+async function index_home(req, res) {
+    try {
+        const rawData = fs.readFileSync("fakeData/Lobby/lobby.json");
+        const data = JSON.parse(rawData);
+        count = 0
+        res.status(200).json(data);
+    } catch (err) {
+        console.log('Error:', err);
+        res.status(500).json({ error: '伺服器發生問題' });
+    }
+}
+
+export default { index_home };

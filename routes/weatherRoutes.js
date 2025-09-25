@@ -1,7 +1,7 @@
-const express = require('express');
-const router = express.Router();
+import express from 'express';
+import weatherController from '../controllers/WeatherController.js';
 
-const weatherController = require('../controllers/WeatherController');
+const router = express.Router();
 
 router
     .route('/forecast/36-hour')
@@ -11,4 +11,4 @@ router
     .route('/forecast/tide_info')
     .get(weatherController.get_tide_info)
 
-module.exports = router
+export default router;
