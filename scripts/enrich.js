@@ -1,38 +1,9 @@
 // enrich.js
 import { setTimeout as delay } from 'node:timers/promises';
 import { printProgress } from '../utils/progress.js';
+import { splitSciName, normalizeSciParts, httpGet} from '../utils/utils.js';
 
 const WIKI_ORIGIN = 'https://{lang}.wikipedia.org/api/rest_v1/page/summary/';
-
-// 小工具：科名拆成 Genus/Species
-function splitSciName(name = '') {
-  const [Genus, ...rest] = String(name).trim().split(/\s+/);
-  return { Genus, Species: rest.join(' ') };
-}
-
-// 正規化學名：Genus 首字大寫，其餘小寫；Species 只取第一個詞（避免帶到亞種/變種）
-function normalizeSciParts(name = '') {
-  const raw = String(name).trim().replace(/\s+/g, ' ');
-  if (!raw) return { Genus: '', Species: '', Sub: '' };
-  const [g, s, ...rest] = raw.split(' ');
-  const Genus = g ? (g[0].toUpperCase() + g.slice(1).toLowerCase()) : '';
-  const Species = s ? s.toLowerCase() : '';
-  const Sub = rest.length ? rest.join(' ') : '';
-  return { Genus, Species, Sub };
-}
-
-// 小工具：對外請求（含逾時）
-async function httpGet(url, { timeoutMs = 10000, headers = {} } = {}) {
-  const ctrl = new AbortController();
-  const id = setTimeout(() => ctrl.abort(), timeoutMs);
-  try {
-    const res = await fetch(url, { signal: ctrl.signal, redirect: 'follow', headers });
-    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-    return await res.json();
-  } finally {
-    clearTimeout(id);
-  }
-}
 
 // 取得 Wikipedia 摘要（不做內部語言 fallback）
 // 回傳 {title, extract, url, lang, variant, query} 或 null
@@ -102,8 +73,13 @@ async function fetchWikipediaSections(titleOrSciName, { lang = 'zh', variant = '
   let title = titleOrSciName;
   try {
     const sum = await fetchWikipediaSummary(titleOrSciName, { lang, variant: variant.toUpperCase() });
-    if (sum?.title) { title = sum.title; }
+    if (sum?.canonical_title) {
+      title = sum.canonical_title; // 使用真正頁名（避免 displaytitle 帶來的差異）
+    } else if (sum?.title) {
+      title = sum.title; // 後備：才使用顯示標題
+    }
   } catch { /* ignore */ }
+  // console.debug('[wiki] title chosen:', title, 'lang=', lang, 'variant=', variant);
 
   // 2) 列章節
   const secListResp = await wikiApiGet(lang, {
@@ -111,8 +87,10 @@ async function fetchWikipediaSections(titleOrSciName, { lang = 'zh', variant = '
     page: title,
     prop: 'sections',
     variant,
+    redirects: 1,
   });
   const sections = secListResp?.parse?.sections || [];
+  // console.debug('[wiki] sections:', sections.map(s => s.line));
 
   // 建立映射：章節名稱 -> 索引
   const byName = new Map(); // line(lowercased) -> index
@@ -122,9 +100,10 @@ async function fetchWikipediaSections(titleOrSciName, { lang = 'zh', variant = '
   }
 
   // 工具：依關鍵字陣列在 sections 裡模糊比對
+  const norm = (t) => String(t).replace(/\u3000/g, ' ').trim(); // 全形空白→半形並去頭尾空白
   const findIndexByRegexes = (regexes) => {
     for (const rx of regexes) {
-      const hit = sections.find(s => rx.test(String(s.line)));
+      const hit = sections.find(s => rx.test(norm(s.line)));
       if (hit) return hit.index;
     }
     return null;
@@ -136,6 +115,7 @@ async function fetchWikipediaSections(titleOrSciName, { lang = 'zh', variant = '
     ecology: findIndexByRegexes([...KEYWORDS.ecology]),
     economic_use: findIndexByRegexes([...KEYWORDS.economic_use]),
   };
+  console.debug('[wiki] want indexes:', want);
 
   // 3) 把命中的章節抓回 HTML，再轉純文字
   const fetchOne = async (idx) => {
@@ -146,6 +126,7 @@ async function fetchWikipediaSections(titleOrSciName, { lang = 'zh', variant = '
       prop: 'text',
       section: idx,
       variant,
+      redirects: 1,
     });
     const html = res?.parse?.text || '';
     return html ? stripHtml(html) : null;
