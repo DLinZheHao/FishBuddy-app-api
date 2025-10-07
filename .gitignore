@@ -1,0 +1,82 @@
+# =========================
+# macOS 系統檔案
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# =========================
+# Xcode / Swift / iOS
+# =========================
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# =========================
+# Swift Package Manager
+# =========================
+.swiftpm/
+.build/
+Package.resolved
+
+# =========================
+# CocoaPods
+# =========================
+Pods/
+*.lock
+*.xcworkspace
+
+# =========================
+# Carthage
+# =========================
+Carthage/Build/
+
+# =========================
+# Fastlane
+# =========================
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# =========================
+# Node.js / Backend
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+dist/
+tmp/
+logs/
+coverage/
+
+# =========================
+# Python / Data Processing (if used)
+# =========================
+__pycache__/
+*.py[cod]
+*.sqlite
+*.db
+
+# =========================
+# Custom Project Data
+# =========================
+# 忽略 inaturalist 原始資料
+Data/raw/inat_fishes_tw.json
+
+# 其他中間輸出或測試資料
+Data/tmp/
+Data/output/
+Data/cache/
