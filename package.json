@@ -6,9 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
-    "fetch:inat": "RUN_FETCH=1 node server.js",
-    "enrich_fetch:inat": "ENRICH_METADATA=1 RUN_FETCH=1 node server.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

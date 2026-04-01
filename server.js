@@ -38,17 +38,3 @@ const PORT = process.env.PORT || 3000
 const server = app.listen(PORT, "0.0.0.0", (req, res) => {
   console.log(`App running on port ${PORT} ....`);
 })
-
-
-// Optional: one-off data fetcher (disabled by default to avoid nodemon restart loops)
-// Run with: RUN_FETCH=1 node server.js
-import { main } from './scripts/fetchInat.js';
-
-if (process.env.RUN_FETCH === '1') {
-  main().catch(err => {
-    console.error('❌ 發生錯誤：', err);
-    process.exit(1);
-  });
-}
-
-
