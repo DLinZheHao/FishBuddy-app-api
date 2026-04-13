@@ -1,9 +1,14 @@
 import fs from 'fs';
-import path from 'path';
 
 class LocationService {
     constructor(filePath) {
         this.filePath = filePath;
+    }
+
+    async getAllLocations() {
+        const raw = await fs.promises.readFile(this.filePath, 'utf8');
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed.location) ? parsed.location : [];
     }
 
 

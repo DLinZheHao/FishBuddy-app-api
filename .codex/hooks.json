@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"SessionStart $(date)\" >> /tmp/codex-hooks.log; afplay /System/Library/Sounds/Hero.aiff >/dev/null 2>&1",
+            "statusMessage": "Testing SessionStart hook"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"Stop $(date)\" >> /tmp/codex-hooks.log; afplay /System/Library/Sounds/Ping.aiff >/dev/null 2>&1",
+            "statusMessage": "Testing Stop hook"
+          }
+        ]
+      }
+    ]
+  }
+}

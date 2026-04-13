@@ -11,4 +11,8 @@ router
     .route('/forecast/tide_info')
     .get(weatherController.get_tide_info)
 
+router
+    .route('/forecast/tidy_info')
+    .get(weatherController.get_tidy_tide_info)
+
 export default router;
