@@ -80,3 +80,20 @@ Data/raw/inat_fishes_tw.json
 Data/tmp/
 Data/output/
 Data/cache/
+
+# ===== Codex =====
+.codex/config.toml
+
+# ===== Claude Code =====
+.claude/settings.local.json
+.claude/local.json
+.claude/user.json
+
+# ===== MCP (Model Context Protocol) =====
+.mcp.json
+
+# ===== OS =====
+.DS_Store
+
+# ===== Logs (optional,你有用 hook log) =====
+/tmp/codex-hooks.log
