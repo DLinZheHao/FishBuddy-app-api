@@ -53,14 +53,22 @@ const COUNTY_CENTERS = {
 };
 
 function formatLocalDateTime(date) {
-    const pad = (n) => String(n).padStart(2, '0');
-    const yyyy = date.getFullYear();
-    const mm = pad(date.getMonth() + 1);
-    const dd = pad(date.getDate());
-    const hh = pad(date.getHours());
-    const mi = pad(date.getMinutes());
-    const ss = pad(date.getSeconds());
-    return `${yyyy}-${mm}-${dd}T${hh}:${mi}:${ss}`;
+    const formatter = new Intl.DateTimeFormat('sv-SE', {
+        timeZone: TIMEZONE,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    });
+    const parts = Object.fromEntries(
+        formatter.formatToParts(date)
+            .filter((part) => part.type !== 'literal')
+            .map((part) => [part.type, part.value])
+    );
+    return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:${parts.second}`;
 }
 
 function parseNumber(value) {
@@ -175,14 +183,32 @@ function windRiskLevel(windSpeedMs) {
     return 'danger';
 }
 
-function buildTimeRange(days = 7) {
-    const from = new Date();
-    const to = new Date(from);
-    to.setDate(from.getDate() + days);
+function buildTimeRange(days = 7, lookbackHours = 0) {
+    const now = new Date();
+    const from = new Date(now);
+    if (lookbackHours > 0) {
+        from.setHours(from.getHours() - lookbackHours);
+    }
+    const to = new Date(now);
+    to.setDate(to.getDate() + days);
     return {
         from: formatLocalDateTime(from),
         to: formatLocalDateTime(to),
-        now: from
+        now
+    };
+}
+
+function buildTideTimeRange(days = 7, lookbackDays = 1) {
+    const now = new Date();
+    const localToday = toDateLabel(now) || getLocalToday();
+    const from = new Date(`${localToday}T00:00:00+08:00`);
+    from.setDate(from.getDate() - lookbackDays);
+    const to = new Date(now);
+    to.setDate(to.getDate() + days);
+    return {
+        from: formatLocalDateTime(from),
+        to: formatLocalDateTime(to),
+        now
     };
 }
 
@@ -927,11 +953,12 @@ function buildWeatherUI(weather36h, nowIso) {
 function buildTideUI(tideData, nowIso) {
     const now = new Date(nowIso);
     const days = tideData?.days || [];
-    const todayDate = now.toISOString().slice(0, 10);
+    const todayDate = toDateLabel(nowIso) || getLocalToday();
     const today = days.find((day) => day.date === todayDate) || days[0] || { events: [] };
     const events = today.events || [];
-    const nextEvent = events.find((event) => new Date(event.dateTime) > now) || tideData?.now?.nextTide || null;
-    const prevEvent = [...events].reverse().find((event) => new Date(event.dateTime) <= now) || null;
+    const allEvents = days.flatMap((day) => day.events || []);
+    const nextEvent = allEvents.find((event) => new Date(event.dateTime) > now) || tideData?.now?.nextTide || null;
+    const prevEvent = [...allEvents].reverse().find((event) => new Date(event.dateTime) <= now) || null;
 
     let stage = 'unknown';
     if (prevEvent?.type === 'LOW') stage = 'rising';
@@ -1642,7 +1669,7 @@ async function get_tide_info(req, res) {
         }
 
         const targetLocation = req.query.location || '花蓮';
-        const { from, to } = buildTimeRange(7);
+        const { from, to } = buildTideTimeRange(7, 1);
         const tideForecasts = await fetchTideForecasts(targetLocation, from, to);
         if (!tideForecasts) {
             return res.status(404).json({ error: `找不到對應地點: ${targetLocation}` });
@@ -1666,7 +1693,7 @@ async function get_tidy_tide_info(req, res) {
         const targetLocation = req.query.location || '花蓮';
         const rangeDays = Number.parseInt(req.query.days || '7', 10);
         const safeDays = Number.isFinite(rangeDays) ? Math.min(Math.max(rangeDays, 1), 30) : 7;
-        const { from, to, now } = buildTimeRange(safeDays);
+        const { from, to, now } = buildTideTimeRange(safeDays, 1);
         const [weatherData, locationMetaMap, marineStationsMeta, marineObs] = await Promise.all([
             fetchWeather36h(),
             buildLocationIdMap(),
